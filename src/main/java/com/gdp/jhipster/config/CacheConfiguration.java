@@ -52,6 +52,9 @@ public class CacheConfiguration {
             createCache(cm, com.gdp.jhipster.domain.User.class.getName() + ".persistentTokens");
             createCache(cm, com.gdp.jhipster.domain.Owner.class.getName());
             createCache(cm, com.gdp.jhipster.domain.Car.class.getName());
+            createCache(cm, com.gdp.jhipster.domain.School.class.getName());
+            createCache(cm, com.gdp.jhipster.domain.School.class.getName() + ".teachers");
+            createCache(cm, com.gdp.jhipster.domain.Teacher.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

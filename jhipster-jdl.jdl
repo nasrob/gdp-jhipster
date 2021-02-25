@@ -1,0 +1,42 @@
+
+
+entity School {
+    name String required,
+    eduType EducationType required,
+    noOfRooms Integer required min(5) max(99)
+}
+
+enum EducationType {
+	PRIMARY, SECONDARY, HIGHER_SECONDARY
+}
+
+entity Teacher {
+	name String required,
+    age Integer min(21),
+}
+
+// defining multiple one-to-many relationships
+relationship OneToMany {
+	School{teacher} to Teacher{school(name) required} 
+}
+
+// Set Pagination options
+paginate School with infinite-scroll
+paginate Teacher with pagination
+
+// Use DTOs
+dto * with mapstruct
+
+// In case if DTO is not required for specific (comma separated)entities.
+// dto * with mapstruct except School
+
+// Set service options to all except few
+service all with serviceImpl
+
+// In case if service layer is not required for certain
+// (comma separated) entities. Just uncomment below line
+// service all with serviceImpl except School
+
+
+
+

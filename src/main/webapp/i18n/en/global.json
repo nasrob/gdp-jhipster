@@ -9,6 +9,8 @@
         "main": "Entities",
         "owner": "Owner",
         "car": "Car",
+        "school": "School",
+        "teacher": "Teacher",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

@@ -1,0 +1,37 @@
+{
+  "name": "Teacher",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "age",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["min"],
+      "fieldValidateRulesMin": "21"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "school",
+      "otherEntityRelationshipName": "teacher",
+      "relationshipValidateRules": "required",
+      "relationshipName": "school",
+      "otherEntityField": "name"
+    }
+  ],
+  "changelogDate": "20210225223708",
+  "entityTableName": "teacher",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

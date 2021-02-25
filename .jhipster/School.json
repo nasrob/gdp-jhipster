@@ -1,0 +1,42 @@
+{
+  "name": "School",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "eduType",
+      "fieldType": "EducationType",
+      "fieldValues": "PRIMARY,SECONDARY,HIGHER_SECONDARY",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "noOfRooms",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required", "min", "max"],
+      "fieldValidateRulesMin": "5",
+      "fieldValidateRulesMax": "99"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "teacher",
+      "otherEntityRelationshipName": "school",
+      "relationshipName": "teacher"
+    }
+  ],
+  "changelogDate": "20210225223608",
+  "entityTableName": "school",
+  "dto": "mapstruct",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
