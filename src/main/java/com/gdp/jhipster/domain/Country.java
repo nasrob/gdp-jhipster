@@ -10,6 +10,7 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.gdp.jhipster.domain.converter.ContinentEnumConverter;
 import com.gdp.jhipster.domain.enumeration.Continent;
 
 /**
@@ -37,7 +38,8 @@ public class Country implements Serializable {
     private String name;
 
     @NotNull
-    @Enumerated(EnumType.STRING)
+//    @Enumerated(EnumType.STRING)
+    @Convert(converter = ContinentEnumConverter.class)
     @Column(name = "continent", nullable = false)
     private Continent continent;
 
