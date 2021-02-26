@@ -1,0 +1,15 @@
+export const enum Continent {
+  ASIA = 'ASIA',
+
+  EUROPE = 'EUROPE',
+
+  NORTH_AMERICA = 'NORTH_AMERICA',
+
+  AFRICA = 'AFRICA',
+
+  OCEANIA = 'OCEANIA',
+
+  ANTARCTICA = 'ANTARCTICA',
+
+  SOUTH_AMERICA = 'SOUTH_AMERICA',
+}

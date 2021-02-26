@@ -55,6 +55,11 @@ public class CacheConfiguration {
             createCache(cm, com.gdp.jhipster.domain.School.class.getName());
             createCache(cm, com.gdp.jhipster.domain.School.class.getName() + ".teachers");
             createCache(cm, com.gdp.jhipster.domain.Teacher.class.getName());
+            createCache(cm, com.gdp.jhipster.domain.Country.class.getName());
+            createCache(cm, com.gdp.jhipster.domain.Country.class.getName() + ".cities");
+            createCache(cm, com.gdp.jhipster.domain.Country.class.getName() + ".countryLanguages");
+            createCache(cm, com.gdp.jhipster.domain.City.class.getName());
+            createCache(cm, com.gdp.jhipster.domain.CountryLanguage.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
