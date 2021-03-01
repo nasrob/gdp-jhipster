@@ -26,6 +26,10 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
           loadChildren: () => import('./account/account.module').then(m => m.AccountModule),
         },
         ...LAYOUT_ROUTES,
+        // {
+        //   path: 'gdp',
+        //   loadChildren: () => import('./gdp/gdp.module').then(m => m.CountryGDPModule)
+        // }
       ],
       { enableTracing: DEBUG_INFO_ENABLED }
     ),

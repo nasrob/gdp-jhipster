@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IGdpData } from '../../shared/model/chart.gdp.model';
 import { ICountry } from '../../shared/model/country.model';
-import { Chart } from 'chart.js';
+import * as Chart from 'chart.js';
 
 @Component({
   selector: 'jhi-country-gdp',
@@ -11,13 +11,13 @@ import { Chart } from 'chart.js';
   styleUrls: ['./country-gdp.component.scss'],
 })
 export class CountryGDPComponent implements OnInit {
-  currentCountry: ICountry;
-  data: IGdpData[];
-  preGDPUrl: string = 'http://api.worldbank.org/v2/countries/';
-  postGDPUrl: string = '/indicators/NY.GDP.MKTP.CD?format=json&per_page=' + 10;
+  currentCountry!: ICountry;
+  data!: IGdpData[];
+  preGDPUrl = 'http://api.worldbank.org/v2/countries/';
+  postGDPUrl = '/indicators/NY.GDP.MKTP.CD?format=json&per_page=' + 10;
   year = [];
   gdp = [];
-  chart = [];
+  chart: any;
   noDataAvailable: any;
 
   constructor(private activatedRoute: ActivatedRoute, private httpClient: HttpClient) {

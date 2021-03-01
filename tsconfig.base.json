@@ -20,7 +20,9 @@
     "importHelpers": true,
     "downlevelIteration": true,
     "declaration": false,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": false,
+    "strictNullChecks": false
   },
   "angularCompilerOptions": {
     "strictInjectionParameters": true,

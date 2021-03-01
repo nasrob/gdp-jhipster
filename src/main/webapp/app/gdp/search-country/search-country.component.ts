@@ -40,7 +40,7 @@ export class SearchCountryComponent implements OnInit {
     this.loadAll();
   }
 
-  loadAll() {
+  loadAll(): void {
     this.countryGDPService
       .query({
         page: this.page - 1,
@@ -52,14 +52,14 @@ export class SearchCountryComponent implements OnInit {
       .subscribe((res: HttpResponse<ICountry[]>) => this.paginateCountries(res.body, res.headers));
   }
 
-  loadPage(page: number) {
+  loadPage(page: number): void {
     if (page !== this.previousPage) {
       this.previousPage = page;
       this.transition();
     }
   }
 
-  transition() {
+  transition(): void {
     this.router.navigate(['/countries'], {
       queryParams: {
         page: this.page,
@@ -70,7 +70,7 @@ export class SearchCountryComponent implements OnInit {
     this.loadAll();
   }
 
-  clear() {
+  clear(): void {
     this.page = 0;
     this.router.navigate([
       '/countries',
@@ -82,20 +82,20 @@ export class SearchCountryComponent implements OnInit {
     this.loadAll();
   }
 
-  searchCountires() {
+  searchCountires(): void {
     this.clear();
   }
 
-  trackId(index: number, item: ICountry) {
+  trackId(index: number, item: ICountry): number {
     return item.id;
   }
 
-  sort() {
+  sort(): string[] {
     const result = [this.predicate + ',' + (this.reverse ? 'asc' : 'desc')];
     return result;
   }
 
-  private paginateCountries(data: ICountry[], headers: HttpHeaders) {
+  private paginateCountries(data: ICountry[], headers: HttpHeaders): void {
     this.totalItems = parseInt(headers.get('X-Total-Count'), 10);
     this.queryCount = this.totalItems;
     this.countries = data;
