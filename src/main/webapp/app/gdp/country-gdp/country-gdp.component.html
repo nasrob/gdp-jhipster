@@ -1,1 +1,42 @@
-<p>country-gdp works!</p>
+<div class="container">
+    <h2 id="page-heading">
+        <span> GDP Data for Country <b>{{ currentCountry.name }}</b></span>
+    </h2>
+    <div class="row">
+        <div class="col-4">
+            <dl class="row">
+                <dt class="col-sm4">Code</dt>
+                <dd class="col-sm-8">{{ currentCountry.code }}</dd>
+
+                <dt class="col-sm4">Name</dt>
+                <dd class="col-sm-8">{{ currentCountry.name }}</dd>
+
+                <dt class="col-sm4">Continent</dt>
+                <dd class="col-sm-8">{{ 'gdpJhipsterApp.' + currentCountry.continent | translate }}</dd>
+
+                <dt class="col-sm4">Region</dt>
+                <dd class="col-sm-8">{{ currentCountry.region }}</dd>
+
+                <dt class="col-sm4">Surface Area</dt>
+                <dd class="col-sm-8">{{ currentCountry.surfaceArea }}</dd>
+
+                <dt class="col-sm4"></dt>
+                <dd class="col-sm-8">
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-info btn-sm">
+                            <span class="d-none d-md inline">Back</span>
+                        </button>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div class="col-8">
+            <div *ngIf="noDataAvailable">
+                GDP Data for <b>{{ currentCountry.name }}</b> is not available
+            </div>
+            <div *ngIf="chart">
+                <canvas id="canvas">{{ chart }}</canvas>
+            </div>
+        </div>
+    </div>
+</div>
